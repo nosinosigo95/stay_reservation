@@ -1,0 +1,12 @@
+<%= render "shared/user_setting"%>
+<%= link_to "編集", users_edit_path %>
+<table>
+    <tr>
+        <th>メールアドレス</th>
+        <td><%= @user.mail %></td>
+    </tr>
+    <tr>
+        <th>パスワード</th>
+        <td>*********</td>
+    </tr>
+</table>

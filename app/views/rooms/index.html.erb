@@ -1,0 +1,22 @@
+<h2>登録済み一覧</h2>
+<table>
+    <thead>
+        <tr>
+            <th>画像</th>
+            <th>施設名</th>
+            <th>紹介文</th>
+            <th>作成日</th>
+        </tr>
+    </thead>
+    <tbody>
+        <%= @rooms.each do |room| %>
+            <tr>
+                <td><%= image_tag room.image if @user.image.attached? %></td>
+                <td><%= link_to room.facility_name, '#' %></td>
+                <td><%= room.introduction %></td>
+                <td><%= room.prices %></td>
+                <td><%= room.created_at %></td>
+            </tr>
+    </tbody>
+
+</table>

@@ -1,0 +1,18 @@
+<h2>新規登録</h2>
+<%= form_with model:@room, url:rooms_new_path do |f| %>
+    <%= f.label :facility_name, "施設名" %>
+    <%= f.text_field :facility_name %>
+    <%= f.label :introduction, "施設詳細" %>
+    <%= f.text_area :introduction %>
+    <%= f.label :prices, "料金" %>
+    <%= f.text_area :prices %>
+    <%= f.label :address, "住所" %>
+    <%= f.text_area :address %>
+    <%= f.label :image, "施設画像" %>
+    <%= f.hidden_field :image, value:@room.image.signed_id if @room.image.attached? %>
+    <%= f.file_field :image, direct_upload: true %>
+    <ul>
+        <li><%= f.submit "保存" %></li>
+        <li><%= link_to "キャンセル", '#'%></li>
+    </ul>
+<% end %>

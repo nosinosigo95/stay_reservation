@@ -1,0 +1,20 @@
+<header>
+    <h1 class="left">Potepan share</h1>
+    <nav>
+        <div class="right">
+            <% if logged_in? %>
+                <%= image_tag @user.image %>
+                <%= @user.name %>
+            <% else %>
+                <%= link_to "ログイン", log_in_path %>
+                <%= link_to "新規登録", sign_up_path %>
+            <% end %>
+            <ul class="dropmenu">
+                <li>施設の新規登録</li>
+                <li>予約済み一覧</li>
+                <li>アカウント設定</li>
+                <li>ログアウト</li>
+            </ul>
+        </div>
+    </nav>
+</header>

@@ -1,0 +1,22 @@
+<h2>新規登録</h2>
+<%= form_with model: @user, url:create_user_path do |f| %>
+    <ul>
+        <li>
+            <%= f.label :name, "ユーザー名" %>
+            <%= f.text_field :name %>
+        </li>
+        <li>
+            <%= f.label :mail, "メールアドレス"%>
+            <%= f.email_field :mail %>
+        </li>
+        <li>
+            <%= f.label :password, "パスワード"%>
+            <%= f.password_field :password %>
+        </li>
+        <li>
+            <%= f.label :password_confirmation , "確認用パスワード"%>
+            <%= f.password_field :password_confirmation%>
+        </li>
+    </ul>
+    <%= f.submit "新しいアカウントを作成" %>
+<% end %>

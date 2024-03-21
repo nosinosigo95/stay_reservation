@@ -1,0 +1,15 @@
+<%= render "shared/user_setting"%>
+<%= link_to "編集", users_profile_edit_path %>
+<%= form_with model: @user, url: users_profile_update_path do |f| %>
+    <%= f.label :image, "アイコン画像" %>
+    <%= f.hidden_field :image, value:@user.image.signed_id if @user.image.attached? %>
+    <%= f.file_field :image, direct_upload: true %>
+    <%= f.label :name, "名前" %>
+    <%= f.text_field :name %>
+    <%= f.label :introduction, "自己紹介" %>
+    <%= f.text_area :introduction %>
+    <div>
+        <%= f.submit "保存" %>
+        <%= link_to "キャンセル", users_profile_path %>
+    </div>
+<% end %>

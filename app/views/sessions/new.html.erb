@@ -1,0 +1,9 @@
+<h2>ログイン</h2>
+<%= form_with url:log_in_path, scope: :sessions do |f| %>
+    <%= f.label "メールアドレス", :mail %>
+    <%= f.text_field :mail %>
+    <%= f.label "パスワード", :password %>
+    <%= f.text_field :password %>
+    <%= f.submit "ログイン" %>
+    <%= link_to "新しいアカウントを作成", sign_up_path %>
+<% end %>
