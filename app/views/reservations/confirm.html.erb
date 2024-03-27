@@ -1,0 +1,36 @@
+<div class="reservation-confirm">
+    <h2>予約内容の確認</h2>
+    <table>
+        <tr>
+            <th>チェックイン</th>
+            <td><%= @reservation.check_in_date.strftime("%Y/%m/%d") %></td>
+        </tr>
+        <tr>
+            <th>チェックアウト</th>
+            <td><%= @reservation.check_out_date.strftime("%Y/%m/%d") %></td>
+        </tr>
+        <tr>
+            <th>日数</th>
+            <td><%= dates = @reservation.check_out_date.strftime("%d").to_i - @reservation.check_in_date.strftime("%d").to_i + 1  %></td>
+        </tr>
+        <tr>
+            <th>人数</th>
+            <td><%= numbers = @reservation.number %></td>
+        </tr>
+        <tr>
+            <th>お支払い金額</th>
+            <td><%=total_prices = @reservation.room.prices * dates * numbers %></td>
+        </tr>
+    </table>
+    <%= form_with url: reservations_path, model:@reservation do |f| %>
+        <%= f.hidden_field :check_in_date, value: @reservation.check_in_date %>
+        <%= f.hidden_field :check_out_date, value: @reservation.check_out_date %>
+        <%= f.hidden_field :dates, value: dates %>
+        <%= f.hidden_field :number, value: numbers %>
+        <%= f.hidden_field :total_prices, value: total_prices %>
+        <%= f.hidden_field :room_id, value: @reservation.room_id %>
+        <%= f.hidden_field :user_id, value: @user.id %>
+        <%= f.submit "予約を確定" , class: :submit%>
+        <%= link_to "キャンセル", :back, class: :cancel%>
+    <% end %>
+</div>

@@ -1,0 +1,15 @@
+<div class="sign-wrap">
+    <div class="sign-inner">
+        <h2>ログイン</h2>
+        <%= form_with url:log_in_path, scope: :sessions do |f| %>
+            <%= f.label :mail ,"メールアドレス", class: :form_block%>
+            <%= f.text_field :mail, class: :form_block%>
+            <%= f.label  :password, "パスワード", class: :form_block%>
+            <%= f.text_field :password, class: :form_block%>
+            <%= f.submit "ログイン", class: :top_button%>
+            <div class="border-button">
+                <%= link_to "新しいアカウントを作成", sign_up_path, class: :under_button %>
+            </div>
+        <% end %>
+    </div>
+</div>

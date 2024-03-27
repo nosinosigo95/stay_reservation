@@ -1,0 +1,36 @@
+<div class="flex-center">
+    <div class="flex-center-left">
+        <h2>設定</h2>
+        <%= render "shared/user_setting"%>
+    </div>
+    <div class="flex-center-right">
+        <div class="setting-title">
+            <h3>アカウント</h3>
+        </div>
+        <%= form_with model: @user, url: users_account_path do |f| %>
+            <table>
+                <tr>
+                    <th><%= f.label :mail, "メールアドレス" %></th>
+                    <td><%= f.text_field :mail %></td>
+                </tr>
+                <tr>
+                    <th><%= f.label :password, "変更後パスワード"%>
+                <%= "＊変更する場合のみ" %></th>
+                    <td><%= f.password_field  :password %></td>
+                </tr>
+                <tr>
+                    <th><%= f.label :password_confirmation, "確認用パスワード" %><%= "＊変更する場合のみ" %></th>
+                    <td><%= f.password_field :password_confirmation %></td>
+                </tr>
+                <tr>
+                    <th><%= f.label :current_password, "現在のパスワード" %></th>
+                    <td><%= f.password_field :current_password %></td>
+                </tr>
+            </table>
+            <ul class="flex-end">
+                <li><%= link_to "キャンセル", users_account_path, class: :cancel %></li>
+                <li><%= link_to f.submit "保存", class: :submit %></li>
+            </ul>
+        <% end %>
+   </div>
+</div>

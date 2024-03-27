@@ -1,0 +1,32 @@
+<div class="flex-center">
+    <div class="flex-center-left">
+        <h2>設定</h2>
+        <%= render "shared/user_setting"%>
+    </div>
+    <div class="flex-center-right">
+        <div class="setting-title">
+            <h3>プロフィール</h3>
+        </div>
+        <%= form_with model: @user, url: update_users_profile_path do |f| %>
+            <table>
+                <tr>
+                    <th><%= f.label :image, "アイコン画像" %></th>
+                    <td><%= f.file_field :image, direct_upload: true %>
+                    <%= f.hidden_field :image, value:@user.image.signed_id if @user.image.attached? %></td>
+                </tr>
+                <tr>
+                    <th><%= f.label :name, "名前" %></th>
+                    <td><%= f.text_field :name %></td>
+                </tr>
+                <tr>
+                    <th><%= f.label :introduction, "自己紹介" %></th>
+                    <td><%= f.text_area :introduction %></td>
+                </tr>
+            </table>
+            <ul class="flex-end">
+                <li><%= link_to "キャンセル", users_profile_path, class: :cancel %></li>
+                <li><%= f.submit "保存", class: :submit%></li>
+            </ul>
+        <% end %>
+   </div>
+</div>

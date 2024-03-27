@@ -1,0 +1,19 @@
+<div class="sign-wrap">
+    <div class="sign-inner">
+        <h2>新規登録</h2>
+        <%= form_with model: @user, url:create_user_path do |f| %>
+            <%= f.label :name, "ユーザー名", class: :form_block %>
+            <%= f.text_field :name, class: :form_block%>
+            <%= f.label :mail, "メールアドレス", class: :form_block%>
+            <%= f.email_field :mail, class: :form_block %>
+            <%= f.label :password, "パスワード", class: :form_block%>
+            <%= f.password_field :password, class: :form_block %>
+            <%= f.label :password_confirmation , "確認用パスワード", class: :form_block %>
+            <%= f.password_field :password_confirmation, class: :form_block %>
+            <%= f.submit "新しいアカウントを作成", class: :top_button %>
+            <div class="border-button">
+                <%= link_to "アカウントをお持ちの方はログイン", sign_in_path, class: :under_button %>
+            </div>
+        <% end %>
+    </div>
+</div>

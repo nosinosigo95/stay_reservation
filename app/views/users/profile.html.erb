@@ -1,0 +1,26 @@
+<div class="flex-center">
+    <div class="flex-center-left">
+        <h2>設定</h2>
+        <%= render "shared/user_setting"%>
+    </div>
+    <div class="flex-center-right">
+        <div class="setting-title">
+            <h3>プロフィール</h3>
+            <%= link_to "編集", edit_users_profile_path %>
+        </div>
+        <table>
+            <tr>
+                <th>アイコン画像</th>
+                <td><%= image_tag @user.image if @user.image.attached? %></td>
+            </tr>
+            <tr>
+                <th>名前</th>
+                <td><%= @user.name %></td>
+            </tr>
+            <tr>
+                <th>自己紹介</th>
+                <td><%= @user.introduction %></td>
+            </tr>
+        </table>
+    </div>
+</div>
