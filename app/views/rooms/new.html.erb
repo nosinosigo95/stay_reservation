@@ -1,18 +1,32 @@
-<h2>新規登録</h2>
-<%= form_with model:@room, url:rooms_new_path do |f| %>
-    <%= f.label :facility_name, "施設名" %>
-    <%= f.text_field :facility_name %>
-    <%= f.label :introduction, "施設詳細" %>
-    <%= f.text_area :introduction %>
-    <%= f.label :prices, "料金" %>
-    <%= f.text_area :prices %>
-    <%= f.label :address, "住所" %>
-    <%= f.text_area :address %>
-    <%= f.label :image, "施設画像" %>
-    <%= f.hidden_field :image, value:@room.image.signed_id if @room.image.attached? %>
-    <%= f.file_field :image, direct_upload: true %>
-    <ul>
-        <li><%= f.submit "保存" %></li>
-        <li><%= link_to "キャンセル", '#'%></li>
-    </ul>
-<% end %>
+<div class="room-center">
+    <h2>新規登録</h2>
+    <%= form_with model:@room, url:new_rooms_path do |f| %>
+        <table>
+            <tr>
+                <th><%= f.label :facility_name, "施設名" %><span class="need">*</span></th>
+                <td><%= f.text_field :facility_name, class: :field %></td>
+            </tr>
+            <tr>
+                <th><%= f.label :introduction, "施設詳細" %></th>
+                <td><%= f.text_area :introduction, class: :field %></td>
+            </tr>
+            <tr>
+                <th><%= f.label :prices, "料金" %></th>
+                <td><%= f.text_area :prices, class: :field%></td>
+            </tr>
+            <tr>
+                <th><%= f.label :address, "住所" %></th>
+                <td><%= f.text_area :address, class: :field%></td>
+            </tr>
+            <tr>
+                <th><%= f.label :image, "施設画像" %></th>
+                <td><%= f.hidden_field :image, value:@room.image.signed_id if @room.image.attached? %>
+                <%= f.file_field :image, direct_upload: true, class: :field%></td>
+            </tr>
+        </table>
+        <ul>
+            <li><%= f.submit "保存", class: :submit%></li>
+            <li><%= link_to "キャンセル", search_rooms_path, class: :cancel%></li>
+        </ul>
+    <% end %>
+</div>

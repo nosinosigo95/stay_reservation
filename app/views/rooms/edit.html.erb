@@ -1,5 +1,5 @@
 <h2>施設情報の編集</h2>
-<%= form_with model:@room, url: :rooms_update_path(@room) do |f| %>
+<%= form_with model:@room, url: update_rooms_path(@room) do |f| %>
     <% f.label :facility_name, "施設名" %>
     <%= f.text_field :facility_name %>
     <%= f.label :introduction, "施設詳細" %>

@@ -1,12 +1,22 @@
-<%= render "shared/user_setting"%>
-<%= link_to "編集", users_edit_path %>
-<table>
-    <tr>
-        <th>メールアドレス</th>
-        <td><%= @user.mail %></td>
-    </tr>
-    <tr>
-        <th>パスワード</th>
-        <td>*********</td>
-    </tr>
-</table>
+<div class="flex-center">
+    <div class="flex-center-left">
+        <h2>設定</h2>
+        <%= render "shared/user_setting"%>
+    </div>
+    <div class="flex-center-right">
+        <div class="setting-title">
+            <h3>アカウント</h3>
+            <%= link_to "編集", edit_users_path %>
+        </div>
+        <table>
+            <tr>
+                <th>メールアドレス</th>
+                <td><%= @user.mail %></td>
+            </tr>
+            <tr>
+                <th>パスワード</th>
+                <td>*********</td>
+            </tr>
+        </table>
+    </div>
+</div>

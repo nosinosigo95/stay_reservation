@@ -1,22 +1,25 @@
 <h2>登録済み一覧</h2>
-<table>
+<table class="restored_list">
     <thead>
         <tr>
-            <th>画像</th>
-            <th>施設名</th>
-            <th>紹介文</th>
-            <th>作成日</th>
+            <th class="facility_img">画像</th>
+            <th class="facility_name">施設名</th>
+            <th class="facility_introduction">紹介文</th>
+            <th class="facility_created_at">作成日</th>
+            <th></th>
+            <th></th>
         </tr>
     </thead>
     <tbody>
-        <%= @rooms.each do |room| %>
+        <% @rooms.each do |room| %>
             <tr>
-                <td><%= image_tag room.image if @user.image.attached? %></td>
-                <td><%= link_to room.facility_name, '#' %></td>
+                <td><%= image_tag room.image, class: :table_image if @user.image.attached? %></td>
+                <td><%= link_to room.facility_name, show_rooms_path(room) %></td>
                 <td><%= room.introduction %></td>
-                <td><%= room.prices %></td>
-                <td><%= room.created_at %></td>
+                <td><%= room.created_at.strftime("%Y/%m/%d") %></td>
+                <td><%= link_to "編集", edit_rooms_path(room) %></td>
+                <td><%= link_to "削除", delete_rooms_path(room), method: :delete %></td>
             </tr>
+        <% end %>
     </tbody>
-
 </table>

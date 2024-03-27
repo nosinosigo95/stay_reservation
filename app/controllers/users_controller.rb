@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-
+  before_action :logged_in_user, only: [:account, :edit, :update, :profile, :profile_edit, :profile_update]
   def sign_up
     @user = User.new
   end
@@ -7,7 +7,6 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     #log_out if (!cookies[:user_id].nil? && !cookies[:remember_token].nil?)
-    default_image(@user)
     if @user.save
       remember @user
 
@@ -53,9 +52,6 @@ class UsersController < ApplicationController
   def user_params
     params.require(:user).permit(:name, :mail, :password, :password_confirmation)
   end
-  def default_image(user)
-    if user.image.nil?
-      user.image.attach(io: File.open('/app/assets/images'), filename: 'default_icon.png', content_type: 'application/png')
-    end
-  end
+
+
 end

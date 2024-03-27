@@ -1,3 +1,191 @@
 // Place all the styles related to the rooms controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+.room-center{
+    margin: 50px auto 0;
+    width: 800px;
+    th,td{
+        padding: 10px 40px;
+    }
+    .field{
+        width: 400px;
+    }
+    .cancel{
+        display: block;
+        margin-top: 20px;
+        margin-left: 30px;
+        text-align: center;
+        line-height: 40px;
+        width: 600px;
+        height: 40px;
+        border: 1px solid black;
+    }
+    .submit{
+        margin-top: 20px;
+        margin-left: 30px;
+        width: 600px;
+        height: 40px;
+        color: white;
+        background-color: orange;
+    }
+}
+.restored_list{
+    width: 90%;
+    margin: 10px auto;
+    text-align: left;
+    border-spacing: 0;
+
+    th{
+        border-bottom: 1px solid black;
+    }
+    td{
+        padding: 5px 0;
+        border-bottom: 1px solid gray;
+    }
+    .table_image {
+        width: 200px;
+        height: 100px;
+    }
+    a{
+        color: blue;
+        &:visited{
+            color: blue;
+        }
+    }
+}
+.search-area{
+    background-color: gray;
+    height: 100px;
+    position: relative;
+    form{
+        position: absolute;
+        margin-left: auto;
+        margin-right: auto;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        input{
+            width: 150px;
+            height: 30px;
+        }
+    }
+}
+
+.card-wrap{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+.card{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: calc(33.3% - 20px);
+    height: fit-content;
+    img{
+        width: 100%;
+    }
+    a{
+        display: block;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        width: 90%;
+        margin: 10px auto;
+        border-radius: 5px;
+        text-align: center;
+        color: white;
+        background-color: orange;
+        &:visited{
+            color: white;
+            background-color: orange;
+        }
+    }
+    .facility_name{
+        font-size: 28px;
+        color: gray;
+    }
+    .address{
+        color: gray;
+    }
+    .prices{
+        color: orange;
+    }
+}
+.back{
+    display: block;
+    margin: 20px;
+    font-size: 18px;
+    color: blue;
+    &:visited{
+        color: blue;
+    }
+}
+.room{
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+
+    .submit{
+        margin-top: 30px;
+        display: block;
+        width: 80%;
+        height: 50px;
+        margin-left: auto;
+        margin-right: auto;
+        color: white;
+        background-color: orange;
+        border: none;
+        border-radius: 3px;
+    }
+    .address{
+        color: gray;
+    }
+}
+.room-name-prices{
+    display: flex;
+    justify-content: space-between;
+    p{
+        margin-top: 0;
+        margin-bottom: 0;
+        display: inline;
+        vertical-align: bottom;
+        font-size: 28px;
+    }
+    .facility_name {
+        color: gray;
+    }
+    .prices{
+        color: orange;
+    }
+
+}
+.top-title{
+    font-size: 60px;
+    text-align: center;
+}
+.top-search{
+    text-align: center;
+    .text_area{
+        width: 300px;
+        height: 50px;
+    }
+    .submit{
+        width: 100px;
+        height: 50px;
+    }
+}
+.recommend-title{
+    text-align: center;
+    font-size: 28px;
+}
+.recommend-area{
+    text-align: center;
+    font-size: 20px;
+    a{
+        margin-left: 50px;
+    }
+    a:first-child{
+        margin-left: 0;
+    }
+}

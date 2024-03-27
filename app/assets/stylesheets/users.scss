@@ -1,3 +1,37 @@
-// Place all the styles related to the users controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: https://sass-lang.com/
+.setting{
+    li{
+        width: 200px;
+        padding: 20px 10px;
+        border:1px solid black;
+        
+    }
+}
+.flex-center{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+.flex-center-right{
+    width: 70%;
+    margin-top: 100px;
+    th,td {
+        padding: 20px 50px;
+    }
+}
+.setting-title{
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid black;
+}
+.flex-end{
+    display: flex;
+    justify-content: flex-end;
+    .cancel{
+        margin-right: 10px;
+        border: 1px solid black;
+    }
+    .submit{
+        color: white;
+        background-color: orange;
+    }
+}

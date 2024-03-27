@@ -1,3 +1,58 @@
 // Place all the styles related to the reservations controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+.reserved_list {
+    width: 95%;
+    margin: 10px auto;
+    text-align: left;
+    border-spacing: 0;
+    th {
+        padding: 5px;
+        border-bottom: 1px solid black;
+    }
+    td {
+        padding: 10px;
+        border-bottom: 1px solid gray;
+    }
+    .table_image {
+        width: 200px;
+        height: 100px;
+    }
+    a {
+        color: blue;
+        &:visited {
+            color: blue;
+        }
+    }
+}
+.reservation-confirm{
+    width: fit-content;
+    margin: 10px auto;
+    td, th{
+        padding: 20px 20px;
+    }
+    th{
+        padding-right: 600px;
+    }
+    .submit{
+        color: white;
+        background-color: orange;
+        width: 80%;
+        margin: 10px auto;
+    }
+    .submit, .cancel{
+        display:block;
+        width: 80%;
+        height: 50px;
+        margin: 10px auto;
+        border-radius: 5px;
+    }
+    .submit{
+        border: none;
+    }
+    .cancel{
+        border: 1px solid black;
+        text-align: center;
+        line-height: 50px;
+    }
+}
